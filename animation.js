@@ -30,8 +30,8 @@ var lyricsData = [
   { text: "Está dicho que es un hecho", time: 134 },
   { text: "No la pierdas, no hay derecho", time: 136 }, 
   { text: "No te olvides que la vida", time: 138 },
-  { text: "Casi nunca está dormida", time: 144 },
-  
+  { text: "Casi nunca está dormida", time: 146 },
+  { text: "Flores amarillas", time: 155 },
 ];
 
 // Animar las letras
