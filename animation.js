@@ -1,5 +1,6 @@
 var audio = document.querySelector("audio");
 var lyrics = document.querySelector("#lyrics");
+var animationContainer = document.querySelector('.flowers');
 
 // Array de objetos que contiene cada línea y su tiempo de aparición en segundos
 var lyricsData = [
@@ -81,6 +82,21 @@ function hideTitle() {
     titulo.style.display = "none";
   }, 3000); // Espera 3 segundos antes de ocultar completamente
 }
+
+// Repetir la canción y el proceso cuando termine
+audio.addEventListener("ended", function() {
+  audio.currentTime = 0; // Reinicia la canción
+  lyrics.innerHTML = ""; // Limpia las letras
+  lyrics.style.opacity = 0; // Restablece la opacidad
+  audio.play(); // Vuelve a reproducir la canción
+
+  // Reiniciar la animación
+/* animationContainer.classList.remove('.flowers'); // Quita la clase con la animación
+void animationContainer.offsetWidth; // Fuerza el reflow
+animationContainer.classList.add('flowers'); // Vuelve a agregar la clase para reiniciar la animación */
+});
+
+
 
 // Llama a la función después de 216 segundos (216,000 milisegundos)
 setTimeout(hideTitle, 18000);
